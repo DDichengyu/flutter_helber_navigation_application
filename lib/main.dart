@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
         controller: pageController,
         onPageChanged: onIndexChanged,
         children: const [
-          DemoPage(title: "home"),
+          HomePage(),
           DemoPage(title: "map"),
           DemoPage(title: "chat"),
           DemoPage(title: "user"),
@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
           NavigationItemModel(
             label: "chat",
             icon: SvgIcon.chat,
-            count: 3,
+            // count: 3,
           ),
           NavigationItemModel(
             label: "user",
@@ -91,6 +91,29 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // 浮动按钮
       floatingActionButtonLocation:
           FloatingActionButtonLocation.centerDocked, // 浮动按钮 停靠在底部中间位置
+    );
+  }
+}
+
+// 新增的 HomePage Widget
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Image.asset(
+          'assets/images/home_image.jpg',
+          width: 300,
+          height: 300,
+        ),
+        const SizedBox(height: 10),
+        const Text(
+          '123456',
+          style: TextStyle(fontSize: 18),
+        ),
+      ],
     );
   }
 }
